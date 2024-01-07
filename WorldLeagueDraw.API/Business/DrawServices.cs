@@ -1,7 +1,6 @@
 ﻿using WorldLeagueDraw.API.Business.Interfaces;
 using WorldLeagueDraw.API.DTOs;
 using WorldLeagueDraw.API.Entities;
-using WorldLeagueDraw.API.Helpers;
 using WorldLeagueDraw.API.Repositories.Interfaces;
 
 namespace WorldLeagueDraw.API.Business
@@ -17,8 +16,7 @@ namespace WorldLeagueDraw.API.Business
         public async Task<DrawResponseDTO> Draw(DrawRequestDTO request)
         {
             // get all teams from database
-            var teams = await _repository.GetAllTeams(); // TODO
-            //var teams = DummyDataHelper.GetDummyTeamList();
+            var teams = await _repository.GetAllTeams(); 
 
             // prepare teams dictionary based on country
             var countryTeams = PrepareCountryTeams(teams.ToList());

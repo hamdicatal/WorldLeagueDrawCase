@@ -1,12 +1,20 @@
 using Microsoft.EntityFrameworkCore;
+using WorldLeagueDraw.API.Business;
+using WorldLeagueDraw.API.Business.Interfaces;
 using WorldLeagueDraw.API.Data;
+using WorldLeagueDraw.API.Repositories;
+using WorldLeagueDraw.API.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add database context to project.
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
+// Add services to the container.
+builder.Services.AddScoped<IDrawServices, DrawServices>();
+builder.Services.AddScoped<IDrawRepository, DrawRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

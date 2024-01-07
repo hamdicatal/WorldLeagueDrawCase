@@ -14,5 +14,12 @@ namespace WorldLeagueDraw.API.Data
         public DbSet<DrawResult> DrawResults { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Country> Countries { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<Team>().HasData(
+            //    DataContextSeed.PrepareTeamList(countries).ToArray()
+            //);
+        }
     }
 }

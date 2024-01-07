@@ -98,8 +98,6 @@ namespace WorldLeagueDraw.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CountryId");
-
                     b.HasIndex("GroupId");
 
                     b.ToTable("Teams");
@@ -114,17 +112,9 @@ namespace WorldLeagueDraw.API.Migrations
 
             modelBuilder.Entity("WorldLeagueDraw.API.Entities.Team", b =>
                 {
-                    b.HasOne("WorldLeagueDraw.API.Entities.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("WorldLeagueDraw.API.Entities.Group", null)
                         .WithMany("Teams")
                         .HasForeignKey("GroupId");
-
-                    b.Navigation("Country");
                 });
 
             modelBuilder.Entity("WorldLeagueDraw.API.Entities.DrawResult", b =>

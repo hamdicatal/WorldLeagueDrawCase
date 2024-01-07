@@ -1,13 +1,16 @@
 # WorldLeagueDraw
+
 Uygulama dockerize olarak çalışmaktadır. "docker-compose up --build" komutuyla çalıştırılabilir.
+
 Veritabanı olarak MongoDb kullanıldı. Default olarak 27017 portunda çalışmaktadır.
-API tarafın .NET 7 kullanıldı. Default olarak :8000 portunda çalışmaktadır.
+
+API tarafında .NET 7 kullanıldı. Default olarak :8000 portunda çalışmaktadır.
 
 API'de sadece bir adet endpoint bulunmaktadır. Aşağıdaki adrese body içerisinde NameSurname ve GroupCount ile POST requesti atıldığında aşağıdaki gibi bir response dönmektedir.
 
 http://localhost:8000/api/WorldLeagueDraw
 
-{
+`{
   "groups": [
     {
       "groupName": "Group-A",
@@ -146,4 +149,4 @@ http://localhost:8000/api/WorldLeagueDraw
       ]
     }
   ]
-}
+}`

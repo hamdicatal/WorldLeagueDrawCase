@@ -12,9 +12,12 @@ namespace WorldLeagueDraw.API.Data.Mongo
             var database = client.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
 
             DrawResults = database.GetCollection<DrawResult>(configuration.GetValue<string>("DatabaseSettings:CollectionName"));
-            //MongoDataContextSeed.SeedData(DrawResults);
+            Teams = database.GetCollection<Team>("Teams");
+
+            MongoDataContextSeed.SeedData(Teams);
         }
 
         public IMongoCollection<DrawResult> DrawResults { get; }
+        public IMongoCollection<Team> Teams { get; }
     }
 }

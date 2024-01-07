@@ -1,17 +1,10 @@
-using Microsoft.EntityFrameworkCore;
 using WorldLeagueDraw.API.Business;
 using WorldLeagueDraw.API.Business.Interfaces;
 using WorldLeagueDraw.API.Data.Mongo;
-using WorldLeagueDraw.API.Data.MSSQL;
 using WorldLeagueDraw.API.Repositories;
 using WorldLeagueDraw.API.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add database context to project.
-builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
 
 // Add services to the container.
 builder.Services.AddScoped<IDrawServices, DrawServices>();

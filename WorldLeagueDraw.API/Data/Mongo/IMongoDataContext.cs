@@ -6,5 +6,6 @@ namespace WorldLeagueDraw.API.Data.Mongo
     public interface IMongoDataContext
     {
         IMongoCollection<DrawResult> DrawResults { get; }
+        IMongoCollection<Team> Teams { get; }
     }
 }

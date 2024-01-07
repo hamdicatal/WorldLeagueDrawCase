@@ -13,14 +13,15 @@ namespace WorldLeagueDraw.API.Business
         {
             _repository = drawRepository;
         }
+
         public async Task<DrawResponseDTO> Draw(DrawRequestDTO request)
         {
             // get all teams from database
-            //var teams = await _repository.GetAllTeams(); // TODO
-            var teams = DummyDataHelper.GetDummyTeamList();
+            var teams = await _repository.GetAllTeams(); // TODO
+            //var teams = DummyDataHelper.GetDummyTeamList();
 
             // prepare teams dictionary based on country
-            var countryTeams = PrepareCountryTeams(teams);
+            var countryTeams = PrepareCountryTeams(teams.ToList());
 
             // handle draw operations
             var groups = PrepareGroups(countryTeams, request.GroupCount);

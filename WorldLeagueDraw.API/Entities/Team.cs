@@ -1,10 +1,14 @@
-﻿namespace WorldLeagueDraw.API.Entities
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+
+namespace WorldLeagueDraw.API.Entities
 {
     public class Team
     {
-        public int Id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }
-        public int CountryId { get; set; }
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldLeagueDraw.API", "WorldLeagueDraw.API\WorldLeagueDraw.API.csproj", "{2ABB971E-2076-4787-A873-A01204B876D8}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{872BC2A0-7A62-4BC1-9356-6DF8B7D87537}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2ABB971E-2076-4787-A873-A01204B876D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ABB971E-2076-4787-A873-A01204B876D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ABB971E-2076-4787-A873-A01204B876D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{872BC2A0-7A62-4BC1-9356-6DF8B7D87537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872BC2A0-7A62-4BC1-9356-6DF8B7D87537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872BC2A0-7A62-4BC1-9356-6DF8B7D87537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872BC2A0-7A62-4BC1-9356-6DF8B7D87537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

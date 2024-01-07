@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  worldleaguedrawdb:
+    container_name: worldleaguedrawdb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db 
+
+  worldleaguedraw.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=mongodb://worldleaguedrawdb:27017"
+    ports:
+      - "8000:80"

@@ -2,7 +2,7 @@
 using WorldLeagueDraw.API.DTOs.Enums;
 using WorldLeagueDraw.API.Entities;
 
-namespace WorldLeagueDraw.API.Data
+namespace WorldLeagueDraw.API.Data.MSSQL
 {
     public static class DataContextSeed
     {

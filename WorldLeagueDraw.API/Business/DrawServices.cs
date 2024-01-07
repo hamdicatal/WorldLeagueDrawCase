@@ -25,11 +25,16 @@ namespace WorldLeagueDraw.API.Business
             // handle draw operations
             var groups = PrepareGroups(countryTeams, request.GroupCount);
 
-            //// create and save draw result to db
-            //var drawResult = new DrawResult();
-            //drawResult.NameSurname = request?.NameSurname ?? string.Empty;
-            ////drawResult.Groups = 
-            //await _repository.CreateDrawResult(drawResult);
+            // create and save draw result to db
+            var drawResult = new DrawResult();
+            drawResult.NameSurname = request.NameSurname;
+            drawResult.Groups = groups.Select(x => new Group()
+            {
+                GroupName = x.Key,
+                Teams = x.Value.Select(y => new Team() { Name = y.Name, Country = y.Country }).ToList()
+            }).ToList();
+
+            await _repository.CreateDrawResult(drawResult);
 
             return new DrawResponseDTO()
             {

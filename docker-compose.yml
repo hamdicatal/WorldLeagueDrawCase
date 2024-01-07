@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  worldleaguedrawdb:
+    image: mongo
+
+  worldleaguedraw.api:
+    image: ${DOCKER_REGISTRY-}worldleaguedrawapi
+    build:
+      context: .
+      dockerfile: WorldLeagueDraw.API/Dockerfile
+
+volumes:
+  mongo_data:

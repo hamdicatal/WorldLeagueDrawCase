@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WorldLeagueDraw.API.Entities;
 
-namespace WorldLeagueDraw.API.Data
+namespace WorldLeagueDraw.API.Data.MSSQL
 {
-    public class DataContext:DbContext
+    public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

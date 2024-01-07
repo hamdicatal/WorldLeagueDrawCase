@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using WorldLeagueDraw.API.Business;
 using WorldLeagueDraw.API.Business.Interfaces;
-using WorldLeagueDraw.API.Data;
+using WorldLeagueDraw.API.Data.Mongo;
+using WorldLeagueDraw.API.Data.MSSQL;
 using WorldLeagueDraw.API.Repositories;
 using WorldLeagueDraw.API.Repositories.Interfaces;
 
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 // Add services to the container.
 builder.Services.AddScoped<IDrawServices, DrawServices>();
 builder.Services.AddScoped<IDrawRepository, DrawRepository>();
+builder.Services.AddScoped<IMongoDataContext, MongoDataContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
